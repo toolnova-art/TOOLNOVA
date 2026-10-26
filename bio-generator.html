@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Generator - ToolNova</title>
+    <meta name="description" content="Generate short profile bio ideas with ToolNova.">
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Bio <span>Generator</span></h1>
+        <p>Create a short bio that reflects your interests.</p>
+    </section>
+
+    <section class="tool-box">
+        <label for="name">Name or nickname</label>
+        <input id="name" placeholder="e.g. Alex">
+
+        <label for="interest">Your interests</label>
+        <input id="interest" placeholder="e.g. Music, coding, photography">
+
+        <label for="vibe">Choose your style</label>
+        <select id="vibe">
+            <option value="cool">Cool</option>
+            <option value="creative">Creative</option>
+            <option value="minimal">Minimal</option>
+            <option value="positive">Positive</option>
+        </select>
+
+        <button onclick="generateBio()">Generate Bio</button>
+
+        <div class="result" id="bioOutput" aria-live="polite">
+            Your bio ideas will appear here.
+        </div>
+
+        <button onclick="copyBio()">Copy Bio</button>
+        <p id="bioMessage" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+let currentBio = "";
+
+function generateBio() {
+    const name = document.getElementById("name").value.trim();
+    const interest = document.getElementById("interest").value.trim();
+    const vibe = document.getElementById("vibe").value;
+
+    if (!name || !interest) {
+        document.getElementById("bioOutput").textContent =
+            "Please enter a name and at least one interest.";
+        return;
+    }
+
+    const bios = {
+        cool: `${name} ✨ | Into ${interest} | Making every moment count.`,
+        creative: `${name} 🎨 | Exploring ${interest} | Creating my own path.`,
+        minimal: `${name} | ${interest} | One day at a time.`,
+        positive: `${name} 🌟 | Passionate about ${interest} | Learning and growing every day.`
+    };
+
+    currentBio = bios[vibe];
+    document.getElementById("bioOutput").textContent = currentBio;
+    document.getElementById("bioMessage").textContent =
+        "Your bio is ready. Personalize it before using it.";
+}
+
+async function copyBio() {
+    if (!currentBio) {
+        document.getElementById("bioMessage").textContent =
+            "Generate a bio first.";
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(currentBio);
+        document.getElementById("bioMessage").textContent =
+            "Bio copied!";
+    } catch {
+        document.getElementById("bioMessage").textContent =
+            "Automatic copying isn't available. Select and copy the bio manually.";
+    }
+}
+</script>
+
+</body>
+</html>
