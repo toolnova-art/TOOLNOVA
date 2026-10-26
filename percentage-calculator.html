@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - ToolNova</title>
+    <meta name="description" content="Calculate percentages online for free with ToolNova.">
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Percentage <span>Calculator</span></h1>
+        <p>Calculate percentages quickly and easily.</p>
+    </section>
+
+    <section class="tool-box">
+        <h2>What is X% of Y?</h2>
+
+        <label for="percent">Percentage (%)</label>
+        <input id="percent" type="number" placeholder="e.g. 20">
+
+        <label for="number">Number</label>
+        <input id="number" type="number" placeholder="e.g. 500">
+
+        <button onclick="calculatePart()">Calculate</button>
+
+        <div class="result" id="resultOne" aria-live="polite">
+            Your result will appear here.
+        </div>
+    </section>
+
+    <section class="tool-box">
+        <h2>X is what percentage of Y?</h2>
+
+        <label for="valueX">First number (X)</label>
+        <input id="valueX" type="number" placeholder="e.g. 25">
+
+        <label for="valueY">Second number (Y)</label>
+        <input id="valueY" type="number" placeholder="e.g. 100">
+
+        <button onclick="calculatePercent()">Calculate</button>
+
+        <div class="result" id="resultTwo" aria-live="polite">
+            Your result will appear here.
+        </div>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+function getNumber(id) {
+    const field = document.getElementById(id);
+    return field.value.trim() === "" ? NaN : Number(field.value);
+}
+
+function calculatePart() {
+    const p = getNumber("percent");
+    const n = getNumber("number");
+    const result = document.getElementById("resultOne");
+
+    if (!Number.isFinite(p) || !Number.isFinite(n)) {
+        result.textContent = "Please enter both numbers.";
+        return;
+    }
+
+    result.textContent = `${p}% of ${n} = ${(p / 100 * n).toLocaleString(undefined, {maximumFractionDigits: 8})}`;
+}
+
+function calculatePercent() {
+    const x = getNumber("valueX");
+    const y = getNumber("valueY");
+    const result = document.getElementById("resultTwo");
+
+    if (!Number.isFinite(x) || !Number.isFinite(y)) {
+        result.textContent = "Please enter both numbers.";
+        return;
+    }
+
+    if (y === 0) {
+        result.textContent = "The second number cannot be zero.";
+        return;
+    }
+
+    result.textContent = `${x} is ${(x / y * 100).toLocaleString(undefined, {maximumFractionDigits: 8})}% of ${y}.`;
+}
+</script>
+
+</body>
+</html>
