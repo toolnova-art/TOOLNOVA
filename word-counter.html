@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter - ToolNova</title>
+    <meta name="description" content="Count words, characters and sentences with the free ToolNova Word Counter.">
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Word <span>Counter</span></h1>
+        <p>Count words, characters and sentences in your text.</p>
+    </section>
+
+    <section class="tool-box">
+        <label for="textInput">Enter or paste your text</label>
+
+        <textarea id="textInput" placeholder="Start typing here..." oninput="countText()"></textarea>
+
+        <div class="result" aria-live="polite">
+            <p>Words: <strong id="words">0</strong></p>
+            <p>Characters: <strong id="characters">0</strong></p>
+            <p>Characters without spaces: <strong id="noSpaces">0</strong></p>
+            <p>Sentences: <strong id="sentences">0</strong></p>
+        </div>
+
+        <button onclick="clearText()">Clear Text</button>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+function countText() {
+    const text = document.getElementById("textInput").value;
+    const trimmed = text.trim();
+
+    const words = trimmed ? trimmed.split(/\s+/u).length : 0;
+    const sentences = trimmed
+        ? (trimmed.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [])
+            .filter(s => s.trim()).length
+        : 0;
+
+    document.getElementById("words").textContent = words;
+    document.getElementById("characters").textContent = text.length;
+    document.getElementById("noSpaces").textContent =
+        [...text].filter(char => !/\s/u.test(char)).length;
+    document.getElementById("sentences").textContent = sentences;
+}
+
+function clearText() {
+    document.getElementById("textInput").value = "";
+    countText();
+}
+</script>
+
+</body>
+</html>
