@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ToolNova — simple free browser tools, AI prompt helpers, and practical digital resources.">
+  <title>ToolNova — Free Tools for Everyday Work</title>
+  <style>
+    :root { --bg:#0b1020; --panel:#121a2e; --panel2:#18233b; --text:#eef3ff; --muted:#aab6d3; --accent:#8b9cff; --accent2:#67e8d0; --line:#2a3654; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(circle at 80% 0%,#1b2850 0,transparent 34%),var(--bg); color:var(--text); line-height:1.6; }
+    a { color:inherit; }
+    .wrap { width:min(1100px,92%); margin:auto; }
+    header { padding:20px 0; border-bottom:1px solid rgba(255,255,255,.08); }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+    .brand { font-weight:850; font-size:1.4rem; letter-spacing:-.04em; text-decoration:none; }
+    .brand span { color:var(--accent2); }
+    nav { display:flex; gap:18px; flex-wrap:wrap; }
+    nav a { color:var(--muted); text-decoration:none; font-size:.95rem; }
+    nav a:hover { color:var(--text); }
+    .hero { padding:76px 0 48px; text-align:center; }
+    .badge { display:inline-block; border:1px solid var(--line); background:rgba(255,255,255,.04); padding:6px 12px; border-radius:999px; color:var(--accent2); font-size:.85rem; }
+    h1 { font-size:clamp(2.4rem,7vw,4.8rem); line-height:1.05; letter-spacing:-.055em; margin:20px auto 18px; max-width:850px; }
+    .gradient { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:transparent; background-clip:text; -webkit-background-clip:text; }
+    .hero p { color:var(--muted); max-width:650px; margin:0 auto 26px; font-size:1.08rem; }
+    .btn { display:inline-block; padding:11px 17px; border-radius:12px; border:1px solid var(--line); background:var(--panel2); color:var(--text); font-weight:700; text-decoration:none; cursor:pointer; }
+    .btn.primary { color:#09101e; border:0; background:linear-gradient(100deg,var(--accent),var(--accent2)); }
+    section { padding:35px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:18px; flex-wrap:wrap; margin-bottom:18px; }
+    h2 { font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.04em; margin:0; }
+    .sub { color:var(--muted); margin:5px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .card { background:linear-gradient(160deg,rgba(24,35,59,.96),rgba(18,26,46,.96)); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 12px 30px rgba(0,0,0,.12); min-width:0; }
+    .icon { font-size:1.65rem; }
+    h3 { margin:8px 0 6px; font-size:1.15rem; }
+    .card p { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+    label { display:block; color:var(--muted); font-size:.9rem; margin:12px 0 6px; }
+    input, textarea, select { width:100%; padding:11px 12px; border-radius:10px; border:1px solid var(--line); background:#0b1224; color:var(--text); font:inherit; }
+    textarea { min-height:110px; resize:vertical; }
+    .row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .result { margin-top:12px; padding:12px; border-radius:10px; background:#0b1224; border:1px solid var(--line); color:var(--accent2); overflow-wrap:anywhere; }
+    .small { color:var(--muted); font-size:.84rem; }
+    .product { display:flex; gap:16px; align-items:flex-start; }
+    .product .icon { background:#0b1224; border:1px solid var(--line); padding:12px; border-radius:14px; }
+    .pill { display:inline-block; font-size:.78rem; border-radius:999px; padding:3px 9px; background:rgba(103,232,208,.1); color:var(--accent2); border:1px solid rgba(103,232,208,.25); }
+    footer { margin-top:35px; padding:28px 0 40px; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:.9rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    @media(max-width:820px) { .grid { grid-template-columns:1fr; } .hero { padding-top:54px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="ToolNova home">Tool<span>Nova</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#tools">Free Tools</a>
+        <a href="#prompts">AI Prompts</a>
+        <a href="#products">Digital Products</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <span class="badge">Free tools • Simple workflows • Built for everyone</span>
+      <h1>Get useful things done <span class="gradient">faster.</span></h1>
+      <p>ToolNova brings together handy browser tools, practical AI prompt ideas, and digital resources. No account needed to use the tools on this page.</p>
+      <a class="btn primary" href="#tools">Explore free tools</a>
+      <a class="btn" href="#prompts">Try prompt helper</a>
+    </section>
+
+    <section id="tools" class="wrap">
+      <div class="section-head">
+        <div><h2>Free browser tools</h2><p class="sub">These tools run in your browser; the text you enter stays on this page.</p></div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">📝</div><h3>Word & Character Counter</h3>
+          <p>Count words, characters, and approximate reading time.</p>
+          <label for="textInput">Paste or type text</label>
+          <textarea id="textInput" placeholder="Start typing here…"></textarea>
+          <div class="result" id="wordResult" aria-live="polite">0 words · 0 characters · 0 min read</div>
+        </article>
+
+        <article class="card">
+          <div class="icon">％</div><h3>Percentage Calculator</h3>
+          <p>Calculate a percentage of a number, right on this page.</p>
+          <div class="row">
+            <div><label for="percent">Percentage (%)</label><input id="percent" type="number" inputmode="decimal" placeholder="e.g. 15"></div>
+            <div><label for="number">Number</label><input id="number" type="number" inputmode="decimal" placeholder="e.g. 250"></div>
+          </div>
+          <button class="btn primary" id="calcPercent" style="margin-top:12px">Calculate</button>
+          <div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔠</div><h3>Text Case Converter</h3>
+          <p>Convert text to uppercase, lowercase, or title case.</p>
+          <label for="caseInput">Your text</label>
+          <textarea id="caseInput" placeholder="Type or paste text…"></textarea>
+          <div class="row" style="margin-top:10px">
+            <button class="btn" id="upperBtn">UPPERCASE</button>
+            <button class="btn" id="lowerBtn">lowercase</button>
+          </div>
+          <button class="btn" id="titleBtn" style="margin-top:10px">Title Case</button>
+          <button class="btn" id="copyCase" style="margin-top:10px">Copy result</button>
+          <div class="small" id="copyStatus" aria-live="polite"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="prompts" class="wrap">
+      <div class="section-head">
+        <div><h2>AI prompt helper</h2><p class="sub">Build a reusable prompt template. This tool doesn't call an AI service.</p></div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div><label for="topic">Topic or subject</label><input id="topic" placeholder="e.g. learning Python"></div>
+          <div><label for="task">What do you want help with?</label>
+            <select id="task">
+              <option>Explain a concept simply</option>
+              <option>Create a step-by-step plan</option>
+              <option>Generate practice questions</option>
+              <option>Brainstorm project ideas</option>
+              <option>Summarize information</option>
+            </select>
+          </div>
+        </div>
+        <label for="level">Audience or level</label>
+        <select id="level">
+          <option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>School student</option>
+        </select>
+        <button class="btn primary" id="makePrompt" style="margin-top:14px">Generate prompt</button>
+        <label for="promptOutput">Your prompt</label>
+        <textarea id="promptOutput" placeholder="Your generated prompt will appear here…"></textarea>
+        <button class="btn" id="copyPrompt" style="margin-top:10px">Copy prompt</button>
+        <span class="small" id="promptStatus" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section id="products" class="wrap">
+      <div class="section-head">
+        <div><h2>Digital resources</h2><p class="sub">A place to add original downloadable products when they're ready.</p></div>
+      </div>
+      <div class="card product">
+        <div class="icon">📦</div>
+        <div>
+          <span class="pill">Coming soon</span>
+          <h3>ToolNova Starter Kit</h3>
+          <p>A planned pack of original productivity templates and AI prompt worksheets. Publish only materials you've created or have permission to sell.</p>
+          <p class="small">No checkout is connected yet. Add a legitimate selling platform only after checking its fees, age rules, privacy terms, and payout options.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>ToolNova</strong><br>Useful little tools for everyday tasks.</div>
+      <div>Privacy-friendly demo: tools process inputs locally in your browser.<br>Not financial, medical, or professional advice.</div>
+      <div>© <span id="year"></span> ToolNova</div>
+    </div>
+  </footer>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const wordResult = document.getElementById('wordResult');
+    function updateWords() {
+      const value = textInput.value;
+      const trimmed = value.trim();
+      const words = trimmed ? trimmed.split(/\s+/).length : 0;
+      const chars = value.length;
+      const minutes = words ? Math.max(1, Math.ceil(words / 200)) : 0;
+      wordResult.textContent = `${words} words · ${chars} characters · ${minutes} min read`;
+    }
+    textInput.addEventListener('input', updateWords);
+
+    document.getElementById('calcPercent').addEventListener('click', () => {
+      const p = Number(document.getElementById('percent').value);
+      const n = Number(document.getElementById('number').value);
+      const result = document.getElementById('percentResult');
+      if (document.getElementById('percent').value === '' || document.getElementById('number').value === '' || !Number.isFinite(p) || !Number.isFinite(n)) {
+        result.textContent = 'Enter a valid percentage and number.';
+        return;
+      }
+      result.textContent = `${p}% of ${n} = ${Number((p * n / 100).toFixed(8))}`;
+    });
+
+    const caseInput = document.getElementById('caseInput');
+    const copyStatus = document.getElementById('copyStatus');
+    document.getElementById('upperBtn').addEventListener('click', () => caseInput.value = caseInput.value.toUpperCase());
+    document.getElementById('lowerBtn').addEventListener('click', () => caseInput.value = caseInput.value.toLowerCase());
+    document.getElementById('titleBtn').addEventListener('click', () => {
+      caseInput.value = caseInput.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+    });
+    document.getElementById('copyCase').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(caseInput.value); copyStatus.textContent = ' Copied!'; }
+      catch { copyStatus.textContent = ' Select the text and copy it manually.'; }
+    });
+
+    document.getElementById('makePrompt').addEventListener('click', () => {
+      const topic = document.getElementById('topic').value.trim() || '[insert topic]';
+      const task = document.getElementById('task').value;
+      const level = document.getElementById('level').value;
+      document.getElementById('promptOutput').value =
+        `Act as a clear and supportive tutor. Help me with: ${topic}. Task: ${task.toLowerCase()}. Audience level: ${level}. Use accurate information, organize the response with headings or numbered steps where useful, include a practical example, and mention any important uncertainty.`;
+      document.getElementById('promptStatus').textContent = '';
+    });
+    document.getElementById('copyPrompt').addEventListener('click', async () => {
+      const out = document.getElementById('promptOutput');
+      const status = document.getElementById('promptStatus');
+      try { await navigator.clipboard.writeText(out.value); status.textContent = ' Copied!'; }
+      catch { status.textContent = ' Select the text and copy it manually.'; }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
