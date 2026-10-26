@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter - ToolNova</title>
+    <meta name="description" content="Convert text to uppercase, lowercase, title case and sentence case.">
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Case <span>Converter</span></h1>
+        <p>Change your text's capitalization with one click.</p>
+    </section>
+
+    <section class="tool-box">
+        <label for="inputText">Enter your text</label>
+        <textarea id="inputText" placeholder="Type or paste text here..."></textarea>
+
+        <div class="tool-grid">
+            <button onclick="convert('upper')">UPPERCASE</button>
+            <button onclick="convert('lower')">lowercase</button>
+            <button onclick="convert('title')">Title Case</button>
+            <button onclick="convert('sentence')">Sentence case</button>
+        </div>
+
+        <h3>Converted text</h3>
+        <textarea id="outputText" readonly placeholder="Your converted text appears here..."></textarea>
+
+        <button onclick="copyText()">Copy Result</button>
+        <p id="message" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+function convert(type) {
+    const input = document.getElementById("inputText").value;
+    let output = input;
+
+    if (type === "upper") {
+        output = input.toUpperCase();
+    } else if (type === "lower") {
+        output = input.toLowerCase();
+    } else if (type === "title") {
+        output = input.toLowerCase().replace(
+            /(^|[\s-])([a-z])/g,
+            (match, separator, letter) => separator + letter.toUpperCase()
+        );
+    } else if (type === "sentence") {
+        output = input.toLowerCase().replace(
+            /(^\s*[a-z]|[.!?]\s+[a-z])/g,
+            match => match.toUpperCase()
+        );
+    }
+
+    document.getElementById("outputText").value = output;
+    document.getElementById("message").textContent = "";
+}
+
+async function copyText() {
+    const output = document.getElementById("outputText");
+    const message = document.getElementById("message");
+
+    if (!output.value) {
+        message.textContent = "There is no text to copy.";
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(output.value);
+        message.textContent = "Copied successfully!";
+    } catch {
+        output.focus();
+        output.select();
+        message.textContent = document.execCommand("copy")
+            ? "Copied successfully!"
+            : "Please select and copy the text manually.";
+    }
+}
+</script>
+
+</body>
+</html>
