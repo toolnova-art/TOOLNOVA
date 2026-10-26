@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caption Generator - ToolNova</title>
+    <meta name="description" content="Generate social media caption ideas with ToolNova.">
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Caption <span>Generator</span></h1>
+        <p>Get ideas for your next social media post.</p>
+    </section>
+
+    <section class="tool-box">
+        <label for="topic">What's your post about?</label>
+        <input id="topic" placeholder="e.g. Travel, friendship, nature">
+
+        <label for="style">Choose a style</label>
+        <select id="style">
+            <option value="cool">Cool</option>
+            <option value="funny">Funny</option>
+            <option value="inspiring">Inspiring</option>
+            <option value="simple">Simple</option>
+        </select>
+
+        <button onclick="generateCaption()">Generate Caption</button>
+
+        <div class="result" id="captionOutput" aria-live="polite">
+            Your caption ideas will appear here.
+        </div>
+
+        <button onclick="copyCaption()">Copy Captions</button>
+        <p id="captionMessage" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+let currentCaptions = "";
+
+function generateCaption() {
+    const topic = document.getElementById("topic").value.trim();
+    const style = document.getElementById("style").value;
+
+    if (!topic) {
+        document.getElementById("captionOutput").textContent =
+            "Please enter a topic first.";
+        return;
+    }
+
+    const templates = {
+        cool: [
+            `Just enjoying the moment — ${topic}. ✨`,
+            `${topic} vibes. No explanation needed. 😎`,
+            `A little more ${topic}, a little less stress.`
+        ],
+        funny: [
+            `Came for the ${topic}, stayed for the memories. 😂`,
+            `My current personality? ${topic}.`,
+            `Proof that ${topic} and I get along perfectly.`
+        ],
+        inspiring: [
+            `Find the beauty in every moment of ${topic}. 🌟`,
+            `Small moments of ${topic} can make a big difference.`,
+            `Keep making room for more ${topic} in your life.`
+        ],
+        simple: [
+            `${topic} moments.`,
+            `A day to remember: ${topic}.`,
+            `Just me and ${topic}.`
+        ]
+    };
+
+    currentCaptions = templates[style].join("\n\n");
+
+    document.getElementById("captionOutput").textContent = currentCaptions;
+    document.getElementById("captionMessage").textContent =
+        "These are sample ideas. Edit them to match your post.";
+}
+
+async function copyCaption() {
+    if (!currentCaptions) {
+        document.getElementById("captionMessage").textContent =
+            "Generate captions first.";
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(currentCaptions);
+        document.getElementById("captionMessage").textContent =
+            "Captions copied!";
+    } catch {
+        document.getElementById("captionMessage").textContent =
+            "Automatic copying isn't available. You can select and copy the captions.";
+    }
+}
+</script>
+
+</body>
+</html>
