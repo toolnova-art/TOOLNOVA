@@ -1,49 +1,585 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free online tools from ToolNova: word counter, percentage calculator, text case converter, caption ideas, bio generator, email drafter, and text summarizer.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ToolNova — Free Online Tools</title>
+<meta name="description" content="Discover free online tools for writing, calculations, text editing and productivity with ToolNova.">
+
 <style>
-:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--text:#eef3ff;--muted:#aab6d3;--accent:#8b9cff;--accent2:#67e8d0;--line:#2a3654}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,#1b2850 0,transparent 34%),var(--bg);color:var(--text);line-height:1.6}
-.wrap{width:min(1100px,92%);margin:auto}header{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.brand{font-weight:850;font-size:1.4rem;letter-spacing:-.04em;text-decoration:none;color:var(--text)}.brand span{color:var(--accent2)}nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-size:.94rem}nav a:hover{color:var(--text)}
-.hero{padding:56px 0 34px;text-align:center}.badge,.pill{display:inline-block;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:5px 11px;border-radius:999px;color:var(--accent2);font-size:.84rem}h1{font-size:clamp(2.25rem,7vw,4.4rem);line-height:1.08;letter-spacing:-.05em;margin:18px auto;max-width:850px}.gradient{background:linear-gradient(90deg,var(--accent),var(--accent2));color:transparent;background-clip:text;-webkit-background-clip:text}.hero p{color:var(--muted);max-width:690px;margin:0 auto 22px}.btn,button{display:inline-block;padding:10px 14px;border-radius:11px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:inherit;font-weight:700;text-decoration:none;cursor:pointer}.btn.primary,button.primary{color:#09101e;border:0;background:linear-gradient(100deg,var(--accent),var(--accent2))}button:hover,.btn:hover{filter:brightness(1.08)}section{padding:28px 0}.section-head{margin-bottom:16px}h2{font-size:clamp(1.55rem,4vw,2rem);letter-spacing:-.035em;margin:0}.sub,.muted{color:var(--muted);margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:linear-gradient(160deg,rgba(24,35,59,.96),rgba(18,26,46,.96));border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0;box-shadow:0 12px 30px rgba(0,0,0,.12)}.icon{font-size:1.55rem}h3{margin:5px 0;font-size:1.12rem}.card p{color:var(--muted);margin:0 0 10px;font-size:.94rem}label{display:block;color:var(--muted);font-size:.9rem;margin:10px 0 5px}input,textarea,select{width:100%;padding:10px 11px;border-radius:10px;border:1px solid var(--line);background:#0b1224;color:var(--text);font:inherit}textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.result{margin-top:10px;padding:11px;border-radius:10px;background:#0b1224;border:1px solid var(--line);overflow-wrap:anywhere;white-space:pre-wrap}.small{font-size:.83rem;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.stats{display:flex;gap:16px;flex-wrap:wrap;color:var(--accent2);font-size:.9rem;margin-top:8px}footer{margin-top:25px;padding:25px 0 38px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.9rem}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:42px}.row{grid-template-columns:1fr}nav{gap:10px}}
+:root {
+  --bg: #05060c;
+  --card: #101321;
+  --blue: #00c8ff;
+  --purple: #a855f7;
+  --text: #f5f7ff;
+  --muted: #a5abc4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at top right, #241047 0, transparent 35%),
+    radial-gradient(ellipse at top left, #05223b 0, transparent 30%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  border-bottom: 1px solid #22243b;
+  background: rgba(5, 6, 12, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--blue);
+  text-decoration: none;
+  text-shadow: 0 0 18px #00c8ff70;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.hero {
+  padding: 90px 0 65px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid #7538b6;
+  border-radius: 30px;
+  color: #d8b4fe;
+  background: #24113a;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.1;
+  margin: 22px 0;
+  letter-spacing: -2px;
+}
+
+.gradient {
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.search {
+  max-width: 570px;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  padding: 7px;
+  border: 1px solid #343858;
+  border-radius: 15px;
+  background: #0d0f1a;
+  box-shadow: 0 0 30px #7540ff12;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+}
+
+button {
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(100deg, #087cff, #9333ea);
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #7538b688;
+}
+
+section {
+  padding: 35px 0;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, #121628, #0a0c15);
+  border: 1px solid #282c49;
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: 0 0 28px #00c8ff12;
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #12385a, #382052);
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 19px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.card a {
+  display: inline-block;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: var(--purple);
+}
+
+.about {
+  text-align: center;
+  padding: 65px 0;
+}
+
+.about p {
+  max-width: 650px;
+  margin: 15px auto;
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid #22243b;
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav {
+    padding: 15px 0;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .search {
+    flex-wrap: wrap;
+  }
+
+  .search input {
+    flex-basis: 100%;
+  }
+
+  .search button {
+    width: 100%;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><div class="wrap nav"><a class="brand" href="#">Tool<span>Nova</span></a><nav><a href="#tools">Free Tools</a><a href="#writing">Writing Helpers</a><a href="#about">About</a></nav></div></header>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">⚡ Tool<span>Nova</span></a>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero wrap"><span class="badge">Free • Fast • No account needed</span><h1>Small tools. <span class="gradient">Big time savings.</span></h1><p>Use handy browser-based tools for writing, calculations, captions, bios, and text cleanup. Your text is processed in this page and is not sent to a server by these tools.</p><a class="btn primary" href="#tools">Explore tools</a></section>
-<section id="tools" class="wrap"><div class="section-head"><h2>Everyday tools</h2><p class="sub">Simple utilities that work right in your browser.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">📝</div><h3>Word & Character Counter</h3><p>Count words, characters, and approximate reading time.</p><label for="countText">Enter or paste text</label><textarea id="countText" placeholder="Type or paste text here..." oninput="countWords()"></textarea><div class="stats" id="countResult">0 words • 0 characters • 0 min read</div></article>
-<article class="card"><div class="icon">🧮</div><h3>Percentage Calculator</h3><p>Calculate a percentage of a number.</p><div class="row"><div><label for="percent">Percentage (%)</label><input id="percent" type="number" placeholder="e.g. 15"></div><div><label for="amount">Number</label><input id="amount" type="number" placeholder="e.g. 200"></div></div><div class="actions"><button class="primary" onclick="calcPercent()">Calculate</button></div><div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div></article>
-<article class="card"><div class="icon">🔠</div><h3>Text Case Converter</h3><p>Convert text to upper, lower, title, or sentence case.</p><label for="caseText">Your text</label><textarea id="caseText" placeholder="Type or paste text..."></textarea><div class="actions"><button onclick="convertCase('upper')">UPPERCASE</button><button onclick="convertCase('lower')">lowercase</button><button onclick="convertCase('title')">Title Case</button><button onclick="convertCase('sentence')">Sentence case</button></div><div class="result" id="caseResult">Converted text appears here.</div><div class="actions"><button onclick="copyText('caseResult')">Copy result</button></div></article>
-<article class="card"><div class="icon">🧠</div><h3>AI Prompt Template Builder</h3><p>Create a prompt you can use with an AI assistant. This makes a prompt; it does not call an AI service itself.</p><label for="promptTask">What do you need help with?</label><input id="promptTask" placeholder="e.g. write a study timetable"><div class="row"><div><label for="promptTone">Tone</label><select id="promptTone"><option>Clear and friendly</option><option>Professional</option><option>Creative</option><option>Simple for beginners</option></select></div><div><label for="promptFormat">Output format</label><select id="promptFormat"><option>Step-by-step list</option><option>Short paragraph</option><option>Table</option><option>Checklist</option></select></div></div><div class="actions"><button class="primary" onclick="makePrompt()">Create prompt</button></div><div class="result" id="promptResult">Your prompt will appear here.</div><div class="actions"><button onclick="copyText('promptResult')">Copy prompt</button></div></article>
-</div></section>
-<section id="writing" class="wrap"><div class="section-head"><h2>Writing helpers</h2><p class="sub">Generate editable drafts and ideas. Review them before using.</p></div>
-<div class="grid">
-<article class="card"><div class="icon">✉️</div><h3>Email Draft Helper</h3><p>Build a polite email draft from a few details. This is a template generator, not an AI service.</p><label for="emailPurpose">What is the email about?</label><input id="emailPurpose" placeholder="e.g. asking for an assignment extension"><div class="row"><div><label for="emailPerson">Recipient</label><input id="emailPerson" placeholder="e.g. teacher"></div><div><label for="emailTone">Tone</label><select id="emailTone"><option>polite</option><option>friendly</option><option>formal</option></select></div></div><div class="actions"><button class="primary" onclick="makeEmail()">Create draft</button></div><div class="result" id="emailResult">Your email draft will appear here.</div><div class="actions"><button onclick="copyText('emailResult')">Copy draft</button></div></article>
-<article class="card"><div class="icon">📱</div><h3>Social Caption Ideas</h3><p>Make a starter caption for a post. Add your own details and voice.</p><label for="captionTopic">Post topic</label><input id="captionTopic" placeholder="e.g. first day at college"><div class="row"><div><label for="captionStyle">Style</label><select id="captionStyle"><option>Fun</option><option>Inspirational</option><option>Minimal</option><option>Professional</option></select></div><div><label for="captionPlatform">Platform</label><select id="captionPlatform"><option>Instagram</option><option>LinkedIn</option><option>YouTube</option><option>Any platform</option></select></div></div><div class="actions"><button class="primary" onclick="makeCaption()">Generate idea</button></div><div class="result" id="captionResult">Your caption idea will appear here.</div><div class="actions"><button onclick="copyText('captionResult')">Copy caption</button></div></article>
-<article class="card"><div class="icon">👤</div><h3>Short Bio Generator</h3><p>Create a simple bio draft for a profile or portfolio.</p><label for="bioName">Name or display name (optional)</label><input id="bioName" placeholder="e.g. Alex"><label for="bioInterests">Interests or skills</label><input id="bioInterests" placeholder="e.g. design, coding, photography"><label for="bioGoal">Goal or what you do</label><input id="bioGoal" placeholder="e.g. learning web development"><div class="actions"><button class="primary" onclick="makeBio()">Create bio</button></div><div class="result" id="bioResult">Your bio will appear here.</div><div class="actions"><button onclick="copyText('bioResult')">Copy bio</button></div></article>
-<article class="card"><div class="icon">📄</div><h3>Text Summary Helper</h3><p>Creates a basic extractive summary from your text locally. It is not AI and may miss important context.</p><label for="summaryText">Paste text to summarize</label><textarea id="summaryText" placeholder="Paste a few paragraphs here..."></textarea><label for="summaryLength">Summary length</label><select id="summaryLength"><option value="1">Very short</option><option value="2" selected>Short</option><option value="3">A little longer</option></select><div class="actions"><button class="primary" onclick="summarizeText()">Summarize text</button></div><div class="result" id="summaryResult">Your summary will appear here.</div><div class="actions"><button onclick="copyText('summaryResult')">Copy summary</button></div></article>
-</div></section>
-<section id="about" class="wrap"><div class="card"><h2>About ToolNova</h2><p class="sub">ToolNova is a growing collection of simple browser tools. The tools on this page run locally in your browser. Avoid entering passwords, financial details, or other sensitive information into any online tool.</p><p class="small">Note: The writing helpers create templates and starter ideas; they do not connect to an AI model. Always review generated text before sending or publishing.</p></div></section>
+  <section class="hero container">
+    <span class="badge">✦ Your all-in-one online tools hub</span>
+
+    <h1>
+      Small Tools.<br>
+      <span class="gradient">Big Possibilities.</span>
+    </h1>
+
+    <p>
+      Discover simple, useful online tools designed to make
+      everyday tasks faster, easier and more productive.
+    </p>
+
+    <form class="search" id="searchForm">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search tools..."
+        aria-label="Search tools"
+      >
+      <button type="submit">Search →</button>
+    </form>
+  </section>
+
+  <section class="container" id="tools">
+    <h2 class="section-title">⚡ Explore Our Tools</h2>
+    <p class="section-description">
+      Useful utilities, right in your browser.
+    </p>
+
+    <div class="grid" id="toolGrid">
+
+      <article class="card" data-search="word character counter text">
+        <div class="icon">📝</div>
+        <h3>Word Counter</h3>
+        <p>Count words and characters in your text with ease.</p>
+        <a href="#word-tool">Explore tool →</a>
+      </article>
+
+      <article class="card" data-search="percentage calculator math">
+        <div class="icon">🔢</div>
+        <h3>Percentage Calculator</h3>
+        <p>Calculate percentages quickly and easily.</p>
+        <a href="#percentage-tool">Explore tool →</a>
+      </article>
+
+      <article class="card" data-search="text case converter uppercase lowercase">
+        <div class="icon">🔠</div>
+        <h3>Text Case Converter</h3>
+        <p>Convert text into uppercase or lowercase.</p>
+        <a href="#case-tool">Explore tool →</a>
+      </article>
+
+      <article class="card" data-search="email draft writing">
+        <div class="icon">✉️</div>
+        <h3>Email Draft Helper</h3>
+        <p>Prepare a simple email draft for your needs.</p>
+        <a href="#email-tool">Explore tool →</a>
+      </article>
+
+      <article class="card" data-search="social caption generator writing">
+        <div class="icon">💬</div>
+        <h3>Caption Ideas</h3>
+        <p>Get started with ideas for social media captions.</p>
+        <a href="#caption-tool">Explore tool →</a>
+      </article>
+
+      <article class="card" data-search="bio generator profile writing">
+        <div class="icon">✨</div>
+        <h3>Bio Generator</h3>
+        <p>Create a starting point for a short profile bio.</p>
+        <a href="#bio-tool">Explore tool →</a>
+      </article>
+
+    </div>
+
+    <p id="searchMessage" style="color:#a5abc4;margin-top:15px" aria-live="polite"></p>
+  </section>
+
+  <section class="container" id="word-tool">
+    <div class="card">
+      <div class="icon">📝</div>
+      <h2>Word Counter</h2>
+      <p>Type or paste text below to count words and characters.</p>
+      <textarea id="wordText" placeholder="Type your text here..." style="width:100%;min-height:130px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
+      <p id="wordResult" style="margin-top:12px">Words: 0 · Characters: 0</p>
+    </div>
+  </section>
+
+  <section class="container" id="percentage-tool">
+    <div class="card">
+      <div class="icon">🔢</div>
+      <h2>Percentage Calculator</h2>
+      <p>Find what percentage one number is of another.</p>
+      <label for="part">First number</label>
+      <input id="part" type="number" placeholder="e.g. 25" style="width:100%;padding:12px;margin:6px 0 12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
+      <label for="whole">Second number</label>
+      <input id="whole" type="number" placeholder="e.g. 200" style="width:100%;padding:12px;margin:6px 0 12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
+      <button type="button" id="calculate">Calculate</button>
+      <p id="percentageResult" style="margin-top:12px" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="container" id="case-tool">
+    <div class="card">
+      <div class="icon">🔠</div>
+      <h2>Text Case Converter</h2>
+      <p>Convert your text to uppercase or lowercase.</p>
+      <textarea id="caseText" placeholder="Type your text..." style="width:100%;min-height:100px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <button type="button" id="upper">UPPERCASE</button>
+        <button type="button" id="lower">lowercase</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="email-tool">
+    <div class="card">
+      <div class="icon">✉️</div>
+      <h2>Email Draft Helper</h2>
+      <p>Enter a topic to create a basic email draft you can edit.</p>
+      <input id="emailTopic" placeholder="What is your email about?" style="width:100%;padding:12px;margin:8px 0;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
+      <button type="button" id="makeEmail">Create draft</button>
+      <textarea id="emailResult" placeholder="Your draft will appear here..." style="width:100%;min-height:150px;margin-top:12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
+    </div>
+  </section>
+
+  <section class="container" id="caption-tool">
+    <div class="card">
+      <div class="icon">💬</div>
+      <h2>Caption Ideas</h2>
+      <p>Get a simple caption starter for your post.</p>
+      <button type="button" id="makeCaption">Generate idea</button>
+      <p id="captionResult" style="margin-top:15px" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="container" id="bio-tool">
+    <div class="card">
+      <div class="icon">✨</div>
+      <h2>Bio Generator</h2>
+      <p>Choose a few details to make a short bio starter.</p>
+      <input id="bioInterest" placeholder="Your interest or hobby" style="width:100%;padding:12px;margin:8px 0;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
+      <button type="button" id="makeBio">Create bio</button>
+      <p id="bioResult" style="margin-top:15px" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="about container" id="about">
+    <h2 class="section-title">About <span class="gradient">ToolNova</span></h2>
+    <p>
+      ToolNova brings handy browser-based utilities together in one place.
+      Our goal is to make everyday digital tasks easier with simple,
+      accessible tools.
+    </p>
+    <p>
+      Avoid entering passwords, private records, or other sensitive
+      information into online tools.
+    </p>
+  </section>
 </main>
-<footer><div class="wrap">© <span id="year"></span> ToolNova · Free browser tools · <a href="#about">About & privacy note</a></div></footer>
+
+<footer id="contact">
+  <div class="container">
+    <p>⚡ ToolNova — Small Tools. Big Possibilities.</p>
+    <p>© <span id="year"></span> ToolNova. Built for everyday productivity.</p>
+    <p><a href="#about">About & privacy</a> · <a href="#tools">Explore tools</a></p>
+  </div>
+</footer>
+
 <script>
-function countWords(){const t=document.getElementById('countText').value.trim();const words=t?t.split(/\\s+/).length:0;const chars=document.getElementById('countText').value.length;const mins=words?Math.max(1,Math.ceil(words/200)):0;document.getElementById('countResult').textContent=`${words} words • ${chars} characters • ${mins} min read`;}
-function calcPercent(){const p=parseFloat(document.getElementById('percent').value),n=parseFloat(document.getElementById('amount').value);document.getElementById('percentResult').textContent=Number.isFinite(p)&&Number.isFinite(n)?`${p}% of ${n} = ${(p/100*n).toLocaleString(undefined,{maximumFractionDigits:8})}`:'Please enter a valid percentage and number.';}
-function convertCase(type){const el=document.getElementById('caseText');let t=el.value;if(type==='upper')t=t.toUpperCase();if(type==='lower')t=t.toLowerCase();if(type==='title')t=t.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase());if(type==='sentence')t=t.toLowerCase().replace(/(^\\s*\\w|[.!?]\\s+\\w)/g,c=>c.toUpperCase());document.getElementById('caseResult').textContent=t||'Please enter some text.';}
-function makePrompt(){const task=document.getElementById('promptTask').value.trim();if(!task){document.getElementById('promptResult').textContent='Please describe what you need help with.';return;}document.getElementById('promptResult').textContent=`Help me with this task: ${task}. Use a ${document.getElementById('promptTone').value.toLowerCase()} tone. Present the answer as a ${document.getElementById('promptFormat').value.toLowerCase()}. Ask a clarifying question if important details are missing, and do not invent facts.`;}
-function makeEmail(){const purpose=document.getElementById('emailPurpose').value.trim();const person=document.getElementById('emailPerson').value.trim()||'there';const tone=document.getElementById('emailTone').value;if(!purpose){document.getElementById('emailResult').textContent='Please enter the purpose of the email.';return;}document.getElementById('emailResult').textContent=`Subject: ${purpose.charAt(0).toUpperCase()+purpose.slice(1)}\\n\\nHello ${person},\\n\\nI hope you are doing well. I am writing regarding ${purpose}.\\n\\n[Add any important details here.]\\n\\nThank you for your time and understanding.\\n\\nBest regards,\\n[Your name]\\n\\nTone: ${tone}. Please edit the placeholders and check the details before sending.`;}
-function makeCaption(){const topic=document.getElementById('captionTopic').value.trim();const style=document.getElementById('captionStyle').value;const platform=document.getElementById('captionPlatform').value;if(!topic){document.getElementById('captionResult').textContent='Please enter a topic for your post.';return;}const intros={'Fun':'A little moment worth sharing:','Inspirational':'Every experience is a chance to grow:','Minimal':'A moment about','Professional':'Sharing an update about'};document.getElementById('captionResult').textContent=`${intros[style]} ${topic}. ✨\\n\\nWhat did this moment teach you? Share your thoughts below.\\n\\n#${topic.split(/\\s+/).filter(Boolean).slice(0,3).map(w=>w.replace(/[^a-z0-9]/gi,'')).filter(Boolean).join(' #')}\\n\\nDraft idea for ${platform} — personalize it before posting.`;}
-function makeBio(){const name=document.getElementById('bioName').value.trim();const interests=document.getElementById('bioInterests').value.trim();const goal=document.getElementById('bioGoal').value.trim();if(!interests&&!goal){document.getElementById('bioResult').textContent='Add at least one interest, skill, or goal.';return;}document.getElementById('bioResult').textContent=`${name?name+' | ':''}${goal?goal.charAt(0).toUpperCase()+goal.slice(1):'Curious learner'}${interests?'. Interested in '+interests+'.':''} Always learning, creating, and exploring new ideas.`;}
-function summarizeText(){const text=document.getElementById('summaryText').value.trim();if(!text){document.getElementById('summaryResult').textContent='Please paste some text first.';return;}const sentences=text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[text];const count=parseInt(document.getElementById('summaryLength').value,10);const chosen=sentences.map(s=>s.trim()).filter(Boolean);const n=Math.min(chosen.length,count);document.getElementById('summaryResult').textContent=chosen.slice(0,n).join(' ') + (chosen.length>n?' …':'');}
-async function copyText(id){const text=document.getElementById(id).textContent;if(!text||text.includes('will appear here'))return;try{await navigator.clipboard.writeText(text);alert('Copied to clipboard!');}catch(e){alert('Please select the result text and copy it manually.');}}
-document.getElementById('year').textContent=new Date().getFullYear();
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
+const searchMessage = document.getElementById("searchMessage");
+
+searchForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const query = searchInput.value.trim().toLowerCase();
+  const cards = document.querySelectorAll("#toolGrid .card");
+  let matches = 0;
+
+  cards.forEach(function(card) {
+    const text = (card.innerText + " " + card.dataset.search).toLowerCase();
+    const found = text.includes(query);
+    card.classList.toggle("hidden", query !== "" && !found);
+    if (found) matches++;
+  });
+
+  searchMessage.textContent = query
+    ? (matches ? matches + " matching tool(s) found." : "No matching tools found. Try another search.")
+    : "Showing all tools.";
+
+  document.getElementById("tools").scrollIntoView({behavior:"smooth"});
+});
+
+searchInput.addEventListener("input", function() {
+  if (!this.value.trim()) {
+    document.querySelectorAll("#toolGrid .card").forEach(function(card) {
+      card.classList.remove("hidden");
+    });
+    searchMessage.textContent = "";
+  }
+});
+
+const wordText = document.getElementById("wordText");
+wordText.addEventListener("input", function() {
+  const text = this.value.trim();
+  const words = text ? text.split(/\s+/).length : 0;
+  document.getElementById("wordResult").textContent =
+    "Words: " + words + " · Characters: " + this.value.length;
+});
+
+document.getElementById("calculate").addEventListener("click", function() {
+  const part = Number(document.getElementById("part").value);
+  const wholeInput = document.getElementById("whole").value;
+  const whole = Number(wholeInput);
+  const output = document.getElementById("percentageResult");
+
+  if (!document.getElementById("part").value || !wholeInput) {
+    output.textContent = "Please enter both numbers.";
+  } else if (whole === 0) {
+    output.textContent = "The second number cannot be zero.";
+  } else {
+    output.textContent = (part / whole * 100).toFixed(2) + "%";
+  }
+});
+
+document.getElementById("upper").addEventListener("click", function() {
+  const field = document.getElementById("caseText");
+  field.value = field.value.toUpperCase();
+});
+
+document.getElementById("lower").addEventListener("click", function() {
+  const field = document.getElementById("caseText");
+  field.value = field.value.toLowerCase();
+});
+
+document.getElementById("makeEmail").addEventListener("click", function() {
+  const topic = document.getElementById("emailTopic").value.trim();
+  document.getElementById("emailResult").value = topic
+    ? "Subject: " + topic + "\n\nHello,\n\nI am writing regarding " + topic + ".\n\nThank you for your time.\n\nBest regards,"
+    : "Please enter a topic first.";
+});
+
+const captions = [
+  "Small moments, big memories. ✨",
+  "One step at a time. Keep growing. 🚀",
+  "A little progress every day adds up. 💫",
+  "Creating my own kind of magic. ⚡",
+  "Good energy, new ideas, fresh beginnings. 💜"
+];
+
+document.getElementById("makeCaption").addEventListener("click", function() {
+  const caption = captions[Math.floor(Math.random() * captions.length)];
+  document.getElementById("captionResult").textContent = caption;
+});
+
+document.getElementById("makeBio").addEventListener("click", function() {
+  const interest = document.getElementById("bioInterest").value.trim();
+  document.getElementById("bioResult").textContent = interest
+    ? "Curious about " + interest + " | Learning, growing, and creating something new. ✨"
+    : "Please enter an interest or hobby first.";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
