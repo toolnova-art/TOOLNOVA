@@ -1,220 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="ctL_-dqDXK1NQ-ndITbg_yYJwJwRQkI78d1E-LsaN6s" />
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ToolNova — simple free browser tools, AI prompt helpers, and practical digital resources.">
-  <title>ToolNova — Free Tools for Everyday Work</title>
-  <style>
-    :root { --bg:#0b1020; --panel:#121a2e; --panel2:#18233b; --text:#eef3ff; --muted:#aab6d3; --accent:#8b9cff; --accent2:#67e8d0; --line:#2a3654; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:radial-gradient(circle at 80% 0%,#1b2850 0,transparent 34%),var(--bg); color:var(--text); line-height:1.6; }
-    a { color:inherit; }
-    .wrap { width:min(1100px,92%); margin:auto; }
-    header { padding:20px 0; border-bottom:1px solid rgba(255,255,255,.08); }
-    .nav { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
-    .brand { font-weight:850; font-size:1.4rem; letter-spacing:-.04em; text-decoration:none; }
-    .brand span { color:var(--accent2); }
-    nav { display:flex; gap:18px; flex-wrap:wrap; }
-    nav a { color:var(--muted); text-decoration:none; font-size:.95rem; }
-    nav a:hover { color:var(--text); }
-    .hero { padding:76px 0 48px; text-align:center; }
-    .badge { display:inline-block; border:1px solid var(--line); background:rgba(255,255,255,.04); padding:6px 12px; border-radius:999px; color:var(--accent2); font-size:.85rem; }
-    h1 { font-size:clamp(2.4rem,7vw,4.8rem); line-height:1.05; letter-spacing:-.055em; margin:20px auto 18px; max-width:850px; }
-    .gradient { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:transparent; background-clip:text; -webkit-background-clip:text; }
-    .hero p { color:var(--muted); max-width:650px; margin:0 auto 26px; font-size:1.08rem; }
-    .btn { display:inline-block; padding:11px 17px; border-radius:12px; border:1px solid var(--line); background:var(--panel2); color:var(--text); font-weight:700; text-decoration:none; cursor:pointer; }
-    .btn.primary { color:#09101e; border:0; background:linear-gradient(100deg,var(--accent),var(--accent2)); }
-    section { padding:35px 0; }
-    .section-head { display:flex; justify-content:space-between; align-items:end; gap:18px; flex-wrap:wrap; margin-bottom:18px; }
-    h2 { font-size:clamp(1.6rem,4vw,2.2rem); letter-spacing:-.04em; margin:0; }
-    .sub { color:var(--muted); margin:5px 0 0; }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-    .card { background:linear-gradient(160deg,rgba(24,35,59,.96),rgba(18,26,46,.96)); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 12px 30px rgba(0,0,0,.12); min-width:0; }
-    .icon { font-size:1.65rem; }
-    h3 { margin:8px 0 6px; font-size:1.15rem; }
-    .card p { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
-    label { display:block; color:var(--muted); font-size:.9rem; margin:12px 0 6px; }
-    input, textarea, select { width:100%; padding:11px 12px; border-radius:10px; border:1px solid var(--line); background:#0b1224; color:var(--text); font:inherit; }
-    textarea { min-height:110px; resize:vertical; }
-    .row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-    .result { margin-top:12px; padding:12px; border-radius:10px; background:#0b1224; border:1px solid var(--line); color:var(--accent2); overflow-wrap:anywhere; }
-    .small { color:var(--muted); font-size:.84rem; }
-    .product { display:flex; gap:16px; align-items:flex-start; }
-    .product .icon { background:#0b1224; border:1px solid var(--line); padding:12px; border-radius:14px; }
-    .pill { display:inline-block; font-size:.78rem; border-radius:999px; padding:3px 9px; background:rgba(103,232,208,.1); color:var(--accent2); border:1px solid rgba(103,232,208,.25); }
-    footer { margin-top:35px; padding:28px 0 40px; border-top:1px solid rgba(255,255,255,.08); color:var(--muted); font-size:.9rem; }
-    .footer-row { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    @media(max-width:820px) { .grid { grid-template-columns:1fr; } .hero { padding-top:54px; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free online tools from ToolNova: word counter, percentage calculator, text case converter, caption ideas, bio generator, email drafter, and text summarizer.">
+<title>ToolNova — Free Online Tools</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--text:#eef3ff;--muted:#aab6d3;--accent:#8b9cff;--accent2:#67e8d0;--line:#2a3654}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,#1b2850 0,transparent 34%),var(--bg);color:var(--text);line-height:1.6}
+.wrap{width:min(1100px,92%);margin:auto}header{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}.nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.brand{font-weight:850;font-size:1.4rem;letter-spacing:-.04em;text-decoration:none;color:var(--text)}.brand span{color:var(--accent2)}nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-size:.94rem}nav a:hover{color:var(--text)}
+.hero{padding:56px 0 34px;text-align:center}.badge,.pill{display:inline-block;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:5px 11px;border-radius:999px;color:var(--accent2);font-size:.84rem}h1{font-size:clamp(2.25rem,7vw,4.4rem);line-height:1.08;letter-spacing:-.05em;margin:18px auto;max-width:850px}.gradient{background:linear-gradient(90deg,var(--accent),var(--accent2));color:transparent;background-clip:text;-webkit-background-clip:text}.hero p{color:var(--muted);max-width:690px;margin:0 auto 22px}.btn,button{display:inline-block;padding:10px 14px;border-radius:11px;border:1px solid var(--line);background:var(--panel2);color:var(--text);font:inherit;font-weight:700;text-decoration:none;cursor:pointer}.btn.primary,button.primary{color:#09101e;border:0;background:linear-gradient(100deg,var(--accent),var(--accent2))}button:hover,.btn:hover{filter:brightness(1.08)}section{padding:28px 0}.section-head{margin-bottom:16px}h2{font-size:clamp(1.55rem,4vw,2rem);letter-spacing:-.035em;margin:0}.sub,.muted{color:var(--muted);margin:4px 0 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:linear-gradient(160deg,rgba(24,35,59,.96),rgba(18,26,46,.96));border:1px solid var(--line);border-radius:17px;padding:18px;min-width:0;box-shadow:0 12px 30px rgba(0,0,0,.12)}.icon{font-size:1.55rem}h3{margin:5px 0;font-size:1.12rem}.card p{color:var(--muted);margin:0 0 10px;font-size:.94rem}label{display:block;color:var(--muted);font-size:.9rem;margin:10px 0 5px}input,textarea,select{width:100%;padding:10px 11px;border-radius:10px;border:1px solid var(--line);background:#0b1224;color:var(--text);font:inherit}textarea{min-height:100px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.result{margin-top:10px;padding:11px;border-radius:10px;background:#0b1224;border:1px solid var(--line);overflow-wrap:anywhere;white-space:pre-wrap}.small{font-size:.83rem;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.stats{display:flex;gap:16px;flex-wrap:wrap;color:var(--accent2);font-size:.9rem;margin-top:8px}footer{margin-top:25px;padding:25px 0 38px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.9rem}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:42px}.row{grid-template-columns:1fr}nav{gap:10px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#" aria-label="ToolNova home">Tool<span>Nova</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#tools">Free Tools</a>
-        <a href="#prompts">AI Prompts</a>
-        <a href="#products">Digital Products</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero wrap">
-      <span class="badge">Free tools • Simple workflows • Built for everyone</span>
-      <h1>Get useful things done <span class="gradient">faster.</span></h1>
-      <p>ToolNova brings together handy browser tools, practical AI prompt ideas, and digital resources. No account needed to use the tools on this page.</p>
-      <a class="btn primary" href="#tools">Explore free tools</a>
-      <a class="btn" href="#prompts">Try prompt helper</a>
-    </section>
-
-    <section id="tools" class="wrap">
-      <div class="section-head">
-        <div><h2>Free browser tools</h2><p class="sub">These tools run in your browser; the text you enter stays on this page.</p></div>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <div class="icon">📝</div><h3>Word & Character Counter</h3>
-          <p>Count words, characters, and approximate reading time.</p>
-          <label for="textInput">Paste or type text</label>
-          <textarea id="textInput" placeholder="Start typing here…"></textarea>
-          <div class="result" id="wordResult" aria-live="polite">0 words · 0 characters · 0 min read</div>
-        </article>
-
-        <article class="card">
-          <div class="icon">％</div><h3>Percentage Calculator</h3>
-          <p>Calculate a percentage of a number, right on this page.</p>
-          <div class="row">
-            <div><label for="percent">Percentage (%)</label><input id="percent" type="number" inputmode="decimal" placeholder="e.g. 15"></div>
-            <div><label for="number">Number</label><input id="number" type="number" inputmode="decimal" placeholder="e.g. 250"></div>
-          </div>
-          <button class="btn primary" id="calcPercent" style="margin-top:12px">Calculate</button>
-          <div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div>
-        </article>
-
-        <article class="card">
-          <div class="icon">🔠</div><h3>Text Case Converter</h3>
-          <p>Convert text to uppercase, lowercase, or title case.</p>
-          <label for="caseInput">Your text</label>
-          <textarea id="caseInput" placeholder="Type or paste text…"></textarea>
-          <div class="row" style="margin-top:10px">
-            <button class="btn" id="upperBtn">UPPERCASE</button>
-            <button class="btn" id="lowerBtn">lowercase</button>
-          </div>
-          <button class="btn" id="titleBtn" style="margin-top:10px">Title Case</button>
-          <button class="btn" id="copyCase" style="margin-top:10px">Copy result</button>
-          <div class="small" id="copyStatus" aria-live="polite"></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="prompts" class="wrap">
-      <div class="section-head">
-        <div><h2>AI prompt helper</h2><p class="sub">Build a reusable prompt template. This tool doesn't call an AI service.</p></div>
-      </div>
-      <div class="card">
-        <div class="row">
-          <div><label for="topic">Topic or subject</label><input id="topic" placeholder="e.g. learning Python"></div>
-          <div><label for="task">What do you want help with?</label>
-            <select id="task">
-              <option>Explain a concept simply</option>
-              <option>Create a step-by-step plan</option>
-              <option>Generate practice questions</option>
-              <option>Brainstorm project ideas</option>
-              <option>Summarize information</option>
-            </select>
-          </div>
-        </div>
-        <label for="level">Audience or level</label>
-        <select id="level">
-          <option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>School student</option>
-        </select>
-        <button class="btn primary" id="makePrompt" style="margin-top:14px">Generate prompt</button>
-        <label for="promptOutput">Your prompt</label>
-        <textarea id="promptOutput" placeholder="Your generated prompt will appear here…"></textarea>
-        <button class="btn" id="copyPrompt" style="margin-top:10px">Copy prompt</button>
-        <span class="small" id="promptStatus" aria-live="polite"></span>
-      </div>
-    </section>
-
-    <section id="products" class="wrap">
-      <div class="section-head">
-        <div><h2>Digital resources</h2><p class="sub">A place to add original downloadable products when they're ready.</p></div>
-      </div>
-      <div class="card product">
-        <div class="icon">📦</div>
-        <div>
-          <span class="pill">Coming soon</span>
-          <h3>ToolNova Starter Kit</h3>
-          <p>A planned pack of original productivity templates and AI prompt worksheets. Publish only materials you've created or have permission to sell.</p>
-          <p class="small">No checkout is connected yet. Add a legitimate selling platform only after checking its fees, age rules, privacy terms, and payout options.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <div><strong>ToolNova</strong><br>Useful little tools for everyday tasks.</div>
-      <div>Privacy-friendly demo: tools process inputs locally in your browser.<br>Not financial, medical, or professional advice.</div>
-      <div>© <span id="year"></span> ToolNova</div>
-    </div>
-  </footer>
-
-  <script>
-    const textInput = document.getElementById('textInput');
-    const wordResult = document.getElementById('wordResult');
-    function updateWords() {
-      const value = textInput.value;
-      const trimmed = value.trim();
-      const words = trimmed ? trimmed.split(/\s+/).length : 0;
-      const chars = value.length;
-      const minutes = words ? Math.max(1, Math.ceil(words / 200)) : 0;
-      wordResult.textContent = `${words} words · ${chars} characters · ${minutes} min read`;
-    }
-    textInput.addEventListener('input', updateWords);
-
-    document.getElementById('calcPercent').addEventListener('click', () => {
-      const p = Number(document.getElementById('percent').value);
-      const n = Number(document.getElementById('number').value);
-      const result = document.getElementById('percentResult');
-      if (document.getElementById('percent').value === '' || document.getElementById('number').value === '' || !Number.isFinite(p) || !Number.isFinite(n)) {
-        result.textContent = 'Enter a valid percentage and number.';
-        return;
-      }
-      result.textContent = `${p}% of ${n} = ${Number((p * n / 100).toFixed(8))}`;
-    });
-
-    const caseInput = document.getElementById('caseInput');
-    const copyStatus = document.getElementById('copyStatus');
-    document.getElementById('upperBtn').addEventListener('click', () => caseInput.value = caseInput.value.toUpperCase());
-    document.getElementById('lowerBtn').addEventListener('click', () => caseInput.value = caseInput.value.toLowerCase());
-    document.getElementById('titleBtn').addEventListener('click', () => {
-      caseInput.value = caseInput.value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
-    });
-    document.getElementById('copyCase').addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(caseInput.value); copyStatus.textContent = ' Copied!'; }
-      catch { copyStatus.textContent = ' Select the text and copy it manually.'; }
-    });
-
-    document.getElementById('makePrompt').addEventListener('click', () => {
-      const topic = document.getElementById('topic').value.trim() || '[insert topic]';
-      const task = document.getElementById('task').value;
-      const level = document.getElementById('level').value;
-      document.getElementById('promptOutput').value =
-        `Act as a clear and supportive tutor. Help me with: ${topic}. Task: ${task.toLowerCase()}. Audience level: ${level}. Use accurate information, organize the response with headings or numbered steps where useful, include a practical example, and mention any important uncertainty.`;
-      document.getElementById('promptStatus').textContent = '';
-    });
-    document.getElementById('copyPrompt').addEventListener('click', async () => {
-      const out = document.getElementById('promptOutput');
-      const status = document.getElementById('promptStatus');
-      try { await navigator.clipboard.writeText(out.value); status.textContent = ' Copied!'; }
-      catch { status.textContent = ' Select the text and copy it manually.'; }
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<header><div class="wrap nav"><a class="brand" href="#">Tool<span>Nova</span></a><nav><a href="#tools">Free Tools</a><a href="#writing">Writing Helpers</a><a href="#about">About</a></nav></div></header>
+<main>
+<section class="hero wrap"><span class="badge">Free • Fast • No account needed</span><h1>Small tools. <span class="gradient">Big time savings.</span></h1><p>Use handy browser-based tools for writing, calculations, captions, bios, and text cleanup. Your text is processed in this page and is not sent to a server by these tools.</p><a class="btn primary" href="#tools">Explore tools</a></section>
+<section id="tools" class="wrap"><div class="section-head"><h2>Everyday tools</h2><p class="sub">Simple utilities that work right in your browser.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">📝</div><h3>Word & Character Counter</h3><p>Count words, characters, and approximate reading time.</p><label for="countText">Enter or paste text</label><textarea id="countText" placeholder="Type or paste text here..." oninput="countWords()"></textarea><div class="stats" id="countResult">0 words • 0 characters • 0 min read</div></article>
+<article class="card"><div class="icon">🧮</div><h3>Percentage Calculator</h3><p>Calculate a percentage of a number.</p><div class="row"><div><label for="percent">Percentage (%)</label><input id="percent" type="number" placeholder="e.g. 15"></div><div><label for="amount">Number</label><input id="amount" type="number" placeholder="e.g. 200"></div></div><div class="actions"><button class="primary" onclick="calcPercent()">Calculate</button></div><div class="result" id="percentResult" aria-live="polite">Your result will appear here.</div></article>
+<article class="card"><div class="icon">🔠</div><h3>Text Case Converter</h3><p>Convert text to upper, lower, title, or sentence case.</p><label for="caseText">Your text</label><textarea id="caseText" placeholder="Type or paste text..."></textarea><div class="actions"><button onclick="convertCase('upper')">UPPERCASE</button><button onclick="convertCase('lower')">lowercase</button><button onclick="convertCase('title')">Title Case</button><button onclick="convertCase('sentence')">Sentence case</button></div><div class="result" id="caseResult">Converted text appears here.</div><div class="actions"><button onclick="copyText('caseResult')">Copy result</button></div></article>
+<article class="card"><div class="icon">🧠</div><h3>AI Prompt Template Builder</h3><p>Create a prompt you can use with an AI assistant. This makes a prompt; it does not call an AI service itself.</p><label for="promptTask">What do you need help with?</label><input id="promptTask" placeholder="e.g. write a study timetable"><div class="row"><div><label for="promptTone">Tone</label><select id="promptTone"><option>Clear and friendly</option><option>Professional</option><option>Creative</option><option>Simple for beginners</option></select></div><div><label for="promptFormat">Output format</label><select id="promptFormat"><option>Step-by-step list</option><option>Short paragraph</option><option>Table</option><option>Checklist</option></select></div></div><div class="actions"><button class="primary" onclick="makePrompt()">Create prompt</button></div><div class="result" id="promptResult">Your prompt will appear here.</div><div class="actions"><button onclick="copyText('promptResult')">Copy prompt</button></div></article>
+</div></section>
+<section id="writing" class="wrap"><div class="section-head"><h2>Writing helpers</h2><p class="sub">Generate editable drafts and ideas. Review them before using.</p></div>
+<div class="grid">
+<article class="card"><div class="icon">✉️</div><h3>Email Draft Helper</h3><p>Build a polite email draft from a few details. This is a template generator, not an AI service.</p><label for="emailPurpose">What is the email about?</label><input id="emailPurpose" placeholder="e.g. asking for an assignment extension"><div class="row"><div><label for="emailPerson">Recipient</label><input id="emailPerson" placeholder="e.g. teacher"></div><div><label for="emailTone">Tone</label><select id="emailTone"><option>polite</option><option>friendly</option><option>formal</option></select></div></div><div class="actions"><button class="primary" onclick="makeEmail()">Create draft</button></div><div class="result" id="emailResult">Your email draft will appear here.</div><div class="actions"><button onclick="copyText('emailResult')">Copy draft</button></div></article>
+<article class="card"><div class="icon">📱</div><h3>Social Caption Ideas</h3><p>Make a starter caption for a post. Add your own details and voice.</p><label for="captionTopic">Post topic</label><input id="captionTopic" placeholder="e.g. first day at college"><div class="row"><div><label for="captionStyle">Style</label><select id="captionStyle"><option>Fun</option><option>Inspirational</option><option>Minimal</option><option>Professional</option></select></div><div><label for="captionPlatform">Platform</label><select id="captionPlatform"><option>Instagram</option><option>LinkedIn</option><option>YouTube</option><option>Any platform</option></select></div></div><div class="actions"><button class="primary" onclick="makeCaption()">Generate idea</button></div><div class="result" id="captionResult">Your caption idea will appear here.</div><div class="actions"><button onclick="copyText('captionResult')">Copy caption</button></div></article>
+<article class="card"><div class="icon">👤</div><h3>Short Bio Generator</h3><p>Create a simple bio draft for a profile or portfolio.</p><label for="bioName">Name or display name (optional)</label><input id="bioName" placeholder="e.g. Alex"><label for="bioInterests">Interests or skills</label><input id="bioInterests" placeholder="e.g. design, coding, photography"><label for="bioGoal">Goal or what you do</label><input id="bioGoal" placeholder="e.g. learning web development"><div class="actions"><button class="primary" onclick="makeBio()">Create bio</button></div><div class="result" id="bioResult">Your bio will appear here.</div><div class="actions"><button onclick="copyText('bioResult')">Copy bio</button></div></article>
+<article class="card"><div class="icon">📄</div><h3>Text Summary Helper</h3><p>Creates a basic extractive summary from your text locally. It is not AI and may miss important context.</p><label for="summaryText">Paste text to summarize</label><textarea id="summaryText" placeholder="Paste a few paragraphs here..."></textarea><label for="summaryLength">Summary length</label><select id="summaryLength"><option value="1">Very short</option><option value="2" selected>Short</option><option value="3">A little longer</option></select><div class="actions"><button class="primary" onclick="summarizeText()">Summarize text</button></div><div class="result" id="summaryResult">Your summary will appear here.</div><div class="actions"><button onclick="copyText('summaryResult')">Copy summary</button></div></article>
+</div></section>
+<section id="about" class="wrap"><div class="card"><h2>About ToolNova</h2><p class="sub">ToolNova is a growing collection of simple browser tools. The tools on this page run locally in your browser. Avoid entering passwords, financial details, or other sensitive information into any online tool.</p><p class="small">Note: The writing helpers create templates and starter ideas; they do not connect to an AI model. Always review generated text before sending or publishing.</p></div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> ToolNova · Free browser tools · <a href="#about">About & privacy note</a></div></footer>
+<script>
+function countWords(){const t=document.getElementById('countText').value.trim();const words=t?t.split(/\\s+/).length:0;const chars=document.getElementById('countText').value.length;const mins=words?Math.max(1,Math.ceil(words/200)):0;document.getElementById('countResult').textContent=`${words} words • ${chars} characters • ${mins} min read`;}
+function calcPercent(){const p=parseFloat(document.getElementById('percent').value),n=parseFloat(document.getElementById('amount').value);document.getElementById('percentResult').textContent=Number.isFinite(p)&&Number.isFinite(n)?`${p}% of ${n} = ${(p/100*n).toLocaleString(undefined,{maximumFractionDigits:8})}`:'Please enter a valid percentage and number.';}
+function convertCase(type){const el=document.getElementById('caseText');let t=el.value;if(type==='upper')t=t.toUpperCase();if(type==='lower')t=t.toLowerCase();if(type==='title')t=t.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase());if(type==='sentence')t=t.toLowerCase().replace(/(^\\s*\\w|[.!?]\\s+\\w)/g,c=>c.toUpperCase());document.getElementById('caseResult').textContent=t||'Please enter some text.';}
+function makePrompt(){const task=document.getElementById('promptTask').value.trim();if(!task){document.getElementById('promptResult').textContent='Please describe what you need help with.';return;}document.getElementById('promptResult').textContent=`Help me with this task: ${task}. Use a ${document.getElementById('promptTone').value.toLowerCase()} tone. Present the answer as a ${document.getElementById('promptFormat').value.toLowerCase()}. Ask a clarifying question if important details are missing, and do not invent facts.`;}
+function makeEmail(){const purpose=document.getElementById('emailPurpose').value.trim();const person=document.getElementById('emailPerson').value.trim()||'there';const tone=document.getElementById('emailTone').value;if(!purpose){document.getElementById('emailResult').textContent='Please enter the purpose of the email.';return;}document.getElementById('emailResult').textContent=`Subject: ${purpose.charAt(0).toUpperCase()+purpose.slice(1)}\\n\\nHello ${person},\\n\\nI hope you are doing well. I am writing regarding ${purpose}.\\n\\n[Add any important details here.]\\n\\nThank you for your time and understanding.\\n\\nBest regards,\\n[Your name]\\n\\nTone: ${tone}. Please edit the placeholders and check the details before sending.`;}
+function makeCaption(){const topic=document.getElementById('captionTopic').value.trim();const style=document.getElementById('captionStyle').value;const platform=document.getElementById('captionPlatform').value;if(!topic){document.getElementById('captionResult').textContent='Please enter a topic for your post.';return;}const intros={'Fun':'A little moment worth sharing:','Inspirational':'Every experience is a chance to grow:','Minimal':'A moment about','Professional':'Sharing an update about'};document.getElementById('captionResult').textContent=`${intros[style]} ${topic}. ✨\\n\\nWhat did this moment teach you? Share your thoughts below.\\n\\n#${topic.split(/\\s+/).filter(Boolean).slice(0,3).map(w=>w.replace(/[^a-z0-9]/gi,'')).filter(Boolean).join(' #')}\\n\\nDraft idea for ${platform} — personalize it before posting.`;}
+function makeBio(){const name=document.getElementById('bioName').value.trim();const interests=document.getElementById('bioInterests').value.trim();const goal=document.getElementById('bioGoal').value.trim();if(!interests&&!goal){document.getElementById('bioResult').textContent='Add at least one interest, skill, or goal.';return;}document.getElementById('bioResult').textContent=`${name?name+' | ':''}${goal?goal.charAt(0).toUpperCase()+goal.slice(1):'Curious learner'}${interests?'. Interested in '+interests+'.':''} Always learning, creating, and exploring new ideas.`;}
+function summarizeText(){const text=document.getElementById('summaryText').value.trim();if(!text){document.getElementById('summaryResult').textContent='Please paste some text first.';return;}const sentences=text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)||[text];const count=parseInt(document.getElementById('summaryLength').value,10);const chosen=sentences.map(s=>s.trim()).filter(Boolean);const n=Math.min(chosen.length,count);document.getElementById('summaryResult').textContent=chosen.slice(0,n).join(' ') + (chosen.length>n?' …':'');}
+async function copyText(id){const text=document.getElementById(id).textContent;if(!text||text.includes('will appear here'))return;try{await navigator.clipboard.writeText(text);alert('Copied to clipboard!');}catch(e){alert('Please select the result text and copy it manually.');}}
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
