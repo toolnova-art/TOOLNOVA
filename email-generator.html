@@ -1,1 +1,118 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Generator - ToolNova</title>
+    <meta name="description" content="Create a professional email draft with the free ToolNova Email Generator.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="logo" href="index.html">ToolNova</a>
+        <div class="nav-links"><a href="index.html">Home</a></div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Email <span>Generator</span></h1>
+        <p>Create a simple, professional email draft.</p>
+    </section>
+
+    <section class="tool-box">
+        <label for="recipient">Recipient's name</label>
+        <input id="recipient" placeholder="e.g. Alex">
+
+        <label for="purpose">Purpose of the email</label>
+        <input id="purpose" placeholder="e.g. Requesting a meeting">
+
+        <label for="details">Important details</label>
+        <textarea id="details" placeholder="Explain what you want to say..."></textarea>
+
+        <label for="tone">Tone</label>
+        <select id="tone">
+            <option value="professional">Professional</option>
+            <option value="friendly">Friendly</option>
+            <option value="formal">Formal</option>
+        </select>
+
+        <button onclick="generateEmail()">Generate Email</button>
+
+        <h3>Your email draft</h3>
+        <textarea id="emailOutput" readonly placeholder="Your email will appear here..."></textarea>
+
+        <button onclick="copyEmail()">Copy Email</button>
+        <p id="emailMessage" aria-live="polite"></p>
+    </section>
+</main>
+
+<footer>© 2026 ToolNova</footer>
+
+<script>
+function generateEmail() {
+    const recipient = document.getElementById("recipient").value.trim() || "there";
+    const purpose = document.getElementById("purpose").value.trim();
+    const details = document.getElementById("details").value.trim();
+    const tone = document.getElementById("tone").value;
+
+    if (!purpose || !details) {
+        document.getElementById("emailMessage").textContent =
+            "Please enter the purpose and important details.";
+        return;
+    }
+
+    let greeting = `Hello ${recipient},`;
+    let closing = "Best regards,";
+
+    if (tone === "formal") {
+        greeting = `Dear ${recipient},`;
+        closing = "Sincerely,";
+    } else if (tone === "friendly") {
+        greeting = `Hi ${recipient},`;
+        closing = "Thanks,";
+    }
+
+    const draft = `${greeting}
+
+I am writing regarding ${purpose.toLowerCase()}.
+
+${details}
+
+Thank you for your time and consideration.
+
+${closing}
+[Your Name]`;
+
+    document.getElementById("emailOutput").value = draft;
+    document.getElementById("emailMessage").textContent =
+        "Draft created. Review it before sending.";
+}
+
+async function copyEmail() {
+    const output = document.getElementById("emailOutput");
+    const message = document.getElementById("emailMessage");
+
+    if (!output.value) {
+        message.textContent = "Generate an email first.";
+        return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(output.value);
+        message.textContent = "Email copied successfully!";
+    } catch {
+        output.focus();
+        output.select();
+        document.execCommand("copy");
+        message.textContent = "Copy attempted. If needed, copy the selected text manually.";
+    }
+}
+</script>
+
+</body>
+</html>
