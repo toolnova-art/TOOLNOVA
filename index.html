@@ -1,585 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ToolNova — Free Online Tools</title>
-<meta name="description" content="Discover free online tools for writing, calculations, text editing and productivity with ToolNova.">
+    <title>ToolNova - Free Online Tools</title>
 
-<style>
-:root {
-  --bg: #05060c;
-  --card: #101321;
-  --blue: #00c8ff;
-  --purple: #a855f7;
-  --text: #f5f7ff;
-  --muted: #a5abc4;
-}
+    <meta name="description"
+          content="Explore free online tools for writing, calculations, text editing and social media.">
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background:
-    radial-gradient(ellipse at top right, #241047 0, transparent 35%),
-    radial-gradient(ellipse at top left, #05223b 0, transparent 30%),
-    var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-header {
-  border-bottom: 1px solid #22243b;
-  background: rgba(5, 6, 12, 0.9);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(15px);
-}
-
-.nav {
-  min-height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--blue);
-  text-decoration: none;
-  text-shadow: 0 0 18px #00c8ff70;
-}
-
-.logo span {
-  color: var(--purple);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: var(--blue);
-}
-
-.hero {
-  padding: 90px 0 65px;
-  text-align: center;
-}
-
-.badge {
-  display: inline-block;
-  padding: 7px 15px;
-  border: 1px solid #7538b6;
-  border-radius: 30px;
-  color: #d8b4fe;
-  background: #24113a;
-  font-size: 13px;
-}
-
-h1 {
-  font-size: clamp(42px, 8vw, 76px);
-  line-height: 1.1;
-  margin: 22px 0;
-  letter-spacing: -2px;
-}
-
-.gradient {
-  background: linear-gradient(90deg, var(--blue), var(--purple));
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: 0 auto 28px;
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.search {
-  max-width: 570px;
-  margin: auto;
-  display: flex;
-  gap: 10px;
-  padding: 7px;
-  border: 1px solid #343858;
-  border-radius: 15px;
-  background: #0d0f1a;
-  box-shadow: 0 0 30px #7540ff12;
-}
-
-.search input {
-  flex: 1;
-  min-width: 0;
-  padding: 13px;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  color: white;
-  font-size: 15px;
-}
-
-button {
-  border: 0;
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(100deg, #087cff, #9333ea);
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px #7538b688;
-}
-
-section {
-  padding: 35px 0;
-}
-
-.section-title {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-.section-description {
-  color: var(--muted);
-  margin-bottom: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: linear-gradient(145deg, #121628, #0a0c15);
-  border: 1px solid #282c49;
-  padding: 25px;
-  border-radius: 18px;
-  transition: 0.25s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--blue);
-  box-shadow: 0 0 28px #00c8ff12;
-}
-
-.icon {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #12385a, #382052);
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  margin-bottom: 8px;
-  font-size: 19px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 18px;
-}
-
-.card a {
-  display: inline-block;
-  color: var(--blue);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.card a:hover {
-  color: var(--purple);
-}
-
-.about {
-  text-align: center;
-  padding: 65px 0;
-}
-
-.about p {
-  max-width: 650px;
-  margin: 15px auto;
-  color: var(--muted);
-}
-
-footer {
-  border-top: 1px solid #22243b;
-  padding: 30px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-footer a {
-  color: var(--blue);
-  text-decoration: none;
-}
-
-.hidden {
-  display: none;
-}
-
-@media (max-width: 800px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .nav {
-    padding: 15px 0;
-    flex-wrap: wrap;
-  }
-
-  .hero {
-    padding-top: 65px;
-  }
-}
-
-@media (max-width: 520px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    gap: 14px;
-  }
-
-  .search {
-    flex-wrap: wrap;
-  }
-
-  .search input {
-    flex-basis: 100%;
-  }
-
-  .search button {
-    width: 100%;
-  }
-}
-</style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="#" class="logo">⚡ Tool<span>Nova</span></a>
-
     <nav>
-      <a href="#">Home</a>
-      <a href="#tools">Tools</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+        <a class="logo" href="index.html">ToolNova</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#tools">All Tools</a>
+        </div>
     </nav>
-  </div>
 </header>
 
 <main>
-  <section class="hero container">
-    <span class="badge">✦ Your all-in-one online tools hub</span>
+    <section class="hero">
+        <h1>Your Digital <span>Toolbox</span></h1>
 
-    <h1>
-      Small Tools.<br>
-      <span class="gradient">Big Possibilities.</span>
-    </h1>
+        <p>
+            Smart, simple and free tools to help you get things done.
+        </p>
 
-    <p>
-      Discover simple, useful online tools designed to make
-      everyday tasks faster, easier and more productive.
-    </p>
+        <input
+            class="search-box"
+            id="toolSearch"
+            type="search"
+            placeholder="Search tools, e.g. Word Counter..."
+            aria-label="Search tools"
+            oninput="searchTools()"
+        >
 
-    <form class="search" id="searchForm">
-      <input
-        id="searchInput"
-        type="search"
-        placeholder="Search tools..."
-        aria-label="Search tools"
-      >
-      <button type="submit">Search →</button>
-    </form>
-  </section>
+        <div id="searchResults" class="tool-grid hidden"></div>
+    </section>
 
-  <section class="container" id="tools">
-    <h2 class="section-title">⚡ Explore Our Tools</h2>
-    <p class="section-description">
-      Useful utilities, right in your browser.
-    </p>
+    <section id="tools">
+        <h2 class="section-title">Explore Our Tools</h2>
 
-    <div class="grid" id="toolGrid">
+        <div class="tool-grid">
 
-      <article class="card" data-search="word character counter text">
-        <div class="icon">📝</div>
-        <h3>Word Counter</h3>
-        <p>Count words and characters in your text with ease.</p>
-        <a href="#word-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="word-counter.html">
+                <h3>📝 Word Counter</h3>
+                <p>Count words, characters and sentences.</p>
+            </a>
 
-      <article class="card" data-search="percentage calculator math">
-        <div class="icon">🔢</div>
-        <h3>Percentage Calculator</h3>
-        <p>Calculate percentages quickly and easily.</p>
-        <a href="#percentage-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="percentage-calculator.html">
+                <h3>🧮 Percentage Calculator</h3>
+                <p>Calculate percentages in seconds.</p>
+            </a>
 
-      <article class="card" data-search="text case converter uppercase lowercase">
-        <div class="icon">🔠</div>
-        <h3>Text Case Converter</h3>
-        <p>Convert text into uppercase or lowercase.</p>
-        <a href="#case-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="case-converter.html">
+                <h3>🔠 Case Converter</h3>
+                <p>Change the capitalization of your text.</p>
+            </a>
 
-      <article class="card" data-search="email draft writing">
-        <div class="icon">✉️</div>
-        <h3>Email Draft Helper</h3>
-        <p>Prepare a simple email draft for your needs.</p>
-        <a href="#email-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="email-generator.html">
+                <h3>✉️ Email Generator</h3>
+                <p>Create a draft email for your needs.</p>
+            </a>
 
-      <article class="card" data-search="social caption generator writing">
-        <div class="icon">💬</div>
-        <h3>Caption Ideas</h3>
-        <p>Get started with ideas for social media captions.</p>
-        <a href="#caption-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="caption-generator.html">
+                <h3>📱 Caption Generator</h3>
+                <p>Find ideas for your social media captions.</p>
+            </a>
 
-      <article class="card" data-search="bio generator profile writing">
-        <div class="icon">✨</div>
-        <h3>Bio Generator</h3>
-        <p>Create a starting point for a short profile bio.</p>
-        <a href="#bio-tool">Explore tool →</a>
-      </article>
+            <a class="tool-card" href="bio-generator.html">
+                <h3>✨ Bio Generator</h3>
+                <p>Create a short profile bio.</p>
+            </a>
 
-    </div>
-
-    <p id="searchMessage" style="color:#a5abc4;margin-top:15px" aria-live="polite"></p>
-  </section>
-
-  <section class="container" id="word-tool">
-    <div class="card">
-      <div class="icon">📝</div>
-      <h2>Word Counter</h2>
-      <p>Type or paste text below to count words and characters.</p>
-      <textarea id="wordText" placeholder="Type your text here..." style="width:100%;min-height:130px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
-      <p id="wordResult" style="margin-top:12px">Words: 0 · Characters: 0</p>
-    </div>
-  </section>
-
-  <section class="container" id="percentage-tool">
-    <div class="card">
-      <div class="icon">🔢</div>
-      <h2>Percentage Calculator</h2>
-      <p>Find what percentage one number is of another.</p>
-      <label for="part">First number</label>
-      <input id="part" type="number" placeholder="e.g. 25" style="width:100%;padding:12px;margin:6px 0 12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
-      <label for="whole">Second number</label>
-      <input id="whole" type="number" placeholder="e.g. 200" style="width:100%;padding:12px;margin:6px 0 12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
-      <button type="button" id="calculate">Calculate</button>
-      <p id="percentageResult" style="margin-top:12px" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <section class="container" id="case-tool">
-    <div class="card">
-      <div class="icon">🔠</div>
-      <h2>Text Case Converter</h2>
-      <p>Convert your text to uppercase or lowercase.</p>
-      <textarea id="caseText" placeholder="Type your text..." style="width:100%;min-height:100px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-        <button type="button" id="upper">UPPERCASE</button>
-        <button type="button" id="lower">lowercase</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="container" id="email-tool">
-    <div class="card">
-      <div class="icon">✉️</div>
-      <h2>Email Draft Helper</h2>
-      <p>Enter a topic to create a basic email draft you can edit.</p>
-      <input id="emailTopic" placeholder="What is your email about?" style="width:100%;padding:12px;margin:8px 0;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
-      <button type="button" id="makeEmail">Create draft</button>
-      <textarea id="emailResult" placeholder="Your draft will appear here..." style="width:100%;min-height:150px;margin-top:12px;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px;padding:12px"></textarea>
-    </div>
-  </section>
-
-  <section class="container" id="caption-tool">
-    <div class="card">
-      <div class="icon">💬</div>
-      <h2>Caption Ideas</h2>
-      <p>Get a simple caption starter for your post.</p>
-      <button type="button" id="makeCaption">Generate idea</button>
-      <p id="captionResult" style="margin-top:15px" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <section class="container" id="bio-tool">
-    <div class="card">
-      <div class="icon">✨</div>
-      <h2>Bio Generator</h2>
-      <p>Choose a few details to make a short bio starter.</p>
-      <input id="bioInterest" placeholder="Your interest or hobby" style="width:100%;padding:12px;margin:8px 0;background:#0a0c16;color:white;border:1px solid #343858;border-radius:10px">
-      <button type="button" id="makeBio">Create bio</button>
-      <p id="bioResult" style="margin-top:15px" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <section class="about container" id="about">
-    <h2 class="section-title">About <span class="gradient">ToolNova</span></h2>
-    <p>
-      ToolNova brings handy browser-based utilities together in one place.
-      Our goal is to make everyday digital tasks easier with simple,
-      accessible tools.
-    </p>
-    <p>
-      Avoid entering passwords, private records, or other sensitive
-      information into online tools.
-    </p>
-  </section>
+        </div>
+    </section>
 </main>
 
-<footer id="contact">
-  <div class="container">
-    <p>⚡ ToolNova — Small Tools. Big Possibilities.</p>
-    <p>© <span id="year"></span> ToolNova. Built for everyday productivity.</p>
-    <p><a href="#about">About & privacy</a> · <a href="#tools">Explore tools</a></p>
-  </div>
+<footer>
+    <p>© 2026 ToolNova. All rights reserved.</p>
 </footer>
-
-<script>
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
-const searchMessage = document.getElementById("searchMessage");
-
-searchForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const query = searchInput.value.trim().toLowerCase();
-  const cards = document.querySelectorAll("#toolGrid .card");
-  let matches = 0;
-
-  cards.forEach(function(card) {
-    const text = (card.innerText + " " + card.dataset.search).toLowerCase();
-    const found = text.includes(query);
-    card.classList.toggle("hidden", query !== "" && !found);
-    if (found) matches++;
-  });
-
-  searchMessage.textContent = query
-    ? (matches ? matches + " matching tool(s) found." : "No matching tools found. Try another search.")
-    : "Showing all tools.";
-
-  document.getElementById("tools").scrollIntoView({behavior:"smooth"});
-});
-
-searchInput.addEventListener("input", function() {
-  if (!this.value.trim()) {
-    document.querySelectorAll("#toolGrid .card").forEach(function(card) {
-      card.classList.remove("hidden");
-    });
-    searchMessage.textContent = "";
-  }
-});
-
-const wordText = document.getElementById("wordText");
-wordText.addEventListener("input", function() {
-  const text = this.value.trim();
-  const words = text ? text.split(/\s+/).length : 0;
-  document.getElementById("wordResult").textContent =
-    "Words: " + words + " · Characters: " + this.value.length;
-});
-
-document.getElementById("calculate").addEventListener("click", function() {
-  const part = Number(document.getElementById("part").value);
-  const wholeInput = document.getElementById("whole").value;
-  const whole = Number(wholeInput);
-  const output = document.getElementById("percentageResult");
-
-  if (!document.getElementById("part").value || !wholeInput) {
-    output.textContent = "Please enter both numbers.";
-  } else if (whole === 0) {
-    output.textContent = "The second number cannot be zero.";
-  } else {
-    output.textContent = (part / whole * 100).toFixed(2) + "%";
-  }
-});
-
-document.getElementById("upper").addEventListener("click", function() {
-  const field = document.getElementById("caseText");
-  field.value = field.value.toUpperCase();
-});
-
-document.getElementById("lower").addEventListener("click", function() {
-  const field = document.getElementById("caseText");
-  field.value = field.value.toLowerCase();
-});
-
-document.getElementById("makeEmail").addEventListener("click", function() {
-  const topic = document.getElementById("emailTopic").value.trim();
-  document.getElementById("emailResult").value = topic
-    ? "Subject: " + topic + "\n\nHello,\n\nI am writing regarding " + topic + ".\n\nThank you for your time.\n\nBest regards,"
-    : "Please enter a topic first.";
-});
-
-const captions = [
-  "Small moments, big memories. ✨",
-  "One step at a time. Keep growing. 🚀",
-  "A little progress every day adds up. 💫",
-  "Creating my own kind of magic. ⚡",
-  "Good energy, new ideas, fresh beginnings. 💜"
-];
-
-document.getElementById("makeCaption").addEventListener("click", function() {
-  const caption = captions[Math.floor(Math.random() * captions.length)];
-  document.getElementById("captionResult").textContent = caption;
-});
-
-document.getElementById("makeBio").addEventListener("click", function() {
-  const interest = document.getElementById("bioInterest").value.trim();
-  document.getElementById("bioResult").textContent = interest
-    ? "Curious about " + interest + " | Learning, growing, and creating something new. ✨"
-    : "Please enter an interest or hobby first.";
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
